@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List - Manual</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/js/script.js" defer></script>
+  </head>
+  <body class="d-flex justify-content-center align-items-center">
+    <fieldset>
+      <legend>ToDo List</legend>
+      <div class="wrapper">
+        <form>
+          <div class="d-flex">
+            <div>
+              <input
+                type="text"
+                id="list-input"
+                placeholder="Enter list item"
+                autofocus
+              />
+            </div>
+            <div>
+              <button id="add-button" type="button">Add to List</button>
+            </div>
+          </div>
+        </form>
+        <div class="list">
+          <fieldset>
+            <legend>List Items</legend>
+            <ol id="list"></ol>
+          </fieldset>
+        </div>
+      </div>
+    </fieldset>
+  </body>
+</html>

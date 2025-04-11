@@ -1,0 +1,40 @@
+body {
+  font-family: "Arial";
+  color: white;
+  background-color: rgb(15, 20, 50);
+}
+
+.title {
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+p {
+  padding: 10px 20px;
+}
+
+.p1 {
+  background-color: red;
+  color: yellow;
+}
+
+.p2 {
+  background-color: orange;
+  color: black;
+}
+
+.p3 {
+  background-color: green;
+  color: yellow;
+}
+
+.p4 {
+  background-color: yellow;
+  color: red;
+}
+
+.p5 {
+  background-color: orangered;
+  color: cyan;
+}

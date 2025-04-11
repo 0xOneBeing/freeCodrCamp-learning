@@ -1,0 +1,38 @@
+body {
+    background-color: grey;
+    padding: 50px;
+}
+
+h1 {
+  color: black;
+  text-align: center;
+  text-decoration: underline;
+}
+
+p {
+  font-style: italic;
+}
+
+.one {
+  color: pink;
+}
+
+.two {
+  color: purple;
+}
+
+.three {
+  color: brown;
+}
+
+.four {
+  color: red;
+}
+
+.five {
+  color: yellow;
+}
+
+.akira {
+  width: 50%;
+}

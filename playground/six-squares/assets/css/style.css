@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.clicked {
+  color: white;
+  background-color: green;
+  transition: color 0.5s, background-color 1s;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px 0;
+  text-align: center;
+  border: 1px solid green;
+}
+
+.square:hover {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+}

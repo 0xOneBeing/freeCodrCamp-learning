@@ -1,0 +1,253 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple CLI</title>
+    <style>
+      body {
+        font-family: "Courier New", monospace;
+        margin: 20px;
+      }
+
+      #output {
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label for="input">Command: </label>
+      <input type="text" id="input" autofocus onkeydown="handleInput(event)" />
+    </div>
+    <div id="output"></div>
+
+    <script>
+      const outputDiv = document.getElementById("output");
+      const inputField = document.getElementById("input");
+
+      function handleInput(event) {
+        if (event.key === "Enter") {
+          const command = inputField.value.trim();
+          inputField.value = "";
+
+          if (command) {
+            executeCommand(command);
+          }
+        }
+      }
+
+      function executeCommand(command) {
+        let output = "";
+
+        switch (command) {
+          case "help":
+            output =
+              "Available commands:\n- help: Show this help message\n- greet: Greet the user\n- clear: Clear the console";
+            break;
+          case "greet":
+            output = "Hello, user!";
+            break;
+          case "clear":
+            outputDiv.textContent = "";
+            return;
+          default:
+            output = `Command not recognized: ${command}\nType 'help' for a list of available commands.`;
+        }
+
+        appendOutput(output);
+      }
+
+      function appendOutput(text) {
+        outputDiv.textContent += text + "\n";
+        outputDiv.scrollTop = outputDiv.scrollHeight; // Auto-scroll to the bottom
+      }
+    </script>
+  </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linux Terminal-like CLI</title>
+    <style>
+      body {
+        font-family: "Courier New", monospace;
+        margin: 0;
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        background-color: #000;
+        color: #fff;
+      }
+
+      #terminal-container {
+        width: 600px;
+        height: 400px;
+      }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/xterm/css/xterm.css" />
+  </head>
+  <body>
+    <div id="terminal-container"></div>
+
+    <script src="https://unpkg.com/xterm/lib/xterm.js"></script>
+    <script>
+      const term = new Terminal();
+      term.open(document.getElementById("terminal-container"));
+      term.prompt = () => {
+        term.write("\r\n$ ");
+      };
+
+      term.writeln("Welcome to the Linux-like Terminal");
+
+      term.prompt();
+
+      term.onKey((e) => {
+        const printable = !e.altKey && !e.ctrlKey && !e.metaKey;
+
+        if (e.keyCode === 13) {
+          term.prompt();
+        } else if (e.keyCode === 8) {
+          // Do not delete the prompt
+          if (term._core.buffer.x > 2) {
+            term.write("\b \b");
+          }
+        } else if (printable) {
+          term.write(e.key);
+        }
+      });
+
+      function executeCommand(command) {
+        let output = "";
+
+        switch (command.trim()) {
+          case "help":
+            output =
+              "Available commands:\n- help: Show this help message\n- greet: Greet the user\n- clear: Clear the console";
+            break;
+          case "greet":
+            output = "Hello, user!";
+            break;
+          case "clear":
+            term.clear();
+            term.prompt();
+            return;
+          default:
+            output = `Command not recognized: ${command}\nType 'help' for a list of available commands.`;
+        }
+
+        term.writeln(output);
+        term.prompt();
+      }
+
+      term.onData((data) => {
+        const input = data.trim();
+
+        if (input) {
+          executeCommand(input);
+        }
+      });
+    </script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linux Terminal-like CLI</title>
+    <style>
+      body {
+        font-family: "Courier New", monospace;
+        margin: 0;
+        background-color: #000;
+        color: #fff;
+        overflow: hidden;
+      }
+
+      #terminal {
+        width: 100%;
+        height: 100vh;
+        overflow-y: auto;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      #prompt {
+        color: #00ff00;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="terminal"></div>
+
+    <script>
+      const terminal = document.getElementById("terminal");
+      const prompt = document.getElementById("prompt");
+      let commandHistory = [];
+      let commandIndex = 0;
+
+      function writeOutput(text) {
+        terminal.innerHTML += `<div>${text}</div>`;
+        terminal.scrollTop = terminal.scrollHeight;
+      }
+
+      function executeCommand(command) {
+        writeOutput(`<span id="prompt">user@linux:~$</span> ${command}`);
+
+        let output = "";
+
+        switch (command.trim()) {
+          case "help":
+            output =
+              "Available commands:\n- help: Show this help message\n- greet: Greet the user\n- clear: Clear the console";
+            break;
+          case "greet":
+            output = "Hello, user!";
+            break;
+          case "clear":
+            terminal.innerHTML = "";
+            return;
+          default:
+            output = `Command not recognized: ${command}\nType 'help' for a list of available commands.`;
+        }
+
+        writeOutput(output);
+      }
+
+      function handleInput(event) {
+        if (event.key === "Enter") {
+          const command = prompt.innerText.trim();
+          prompt.innerText = "";
+
+          if (command) {
+            commandHistory.push(command);
+            commandIndex = commandHistory.length;
+
+            executeCommand(command);
+          }
+        } else if (event.key === "ArrowUp") {
+          if (commandIndex > 0) {
+            commandIndex--;
+            prompt.innerText = commandHistory[commandIndex];
+          }
+        } else if (event.key === "ArrowDown") {
+          if (commandIndex < commandHistory.length - 1) {
+            commandIndex++;
+            prompt.innerText = commandHistory[commandIndex];
+          } else {
+            commandIndex = commandHistory.length;
+            prompt.innerText = "";
+          }
+        }
+      }
+
+      document.addEventListener("keydown", handleInput);
+    </script>
+  </body>
+</html>

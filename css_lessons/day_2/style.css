@@ -1,0 +1,24 @@
+h1 {
+  color: yellow;
+  text-decoration: underline;
+}
+
+body {
+  background-color: green;
+}
+
+p {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.second-h1 {
+  color: red;
+}
+
+#id-of-second {
+    text-align: center;
+}
+

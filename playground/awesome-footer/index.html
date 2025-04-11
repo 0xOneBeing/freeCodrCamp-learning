@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Awesome Footer</title>
+    <style>
+      .footer-icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+      }
+
+      .footer-icons li {
+        text-align: center;
+      }
+
+      .footer-icons img {
+        width: auto;
+        height: 50px;
+        margin: 0px 15px;
+      }
+
+      @media (max-width: 768px) {
+        .footer-icons li {
+          flex: 0 0 33.33%;
+          max-width: 33.33%;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .footer-icons li {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <footer>
+      <ul class="footer-icons">
+        <li><img src="img/amadeusNew.webp" alt="" /></li>
+        <li><img src="img/ApplePay.webp" alt="" /></li>
+        <li><img src="img/cards.webp" alt="" /></li>
+        <li><img src="img/gPay.webp" alt="" /></li>
+        <li><img src="img/IATA-logo.webp" alt="" /></li>
+        <li><img src="img/klarnaNew.webp" alt="" /></li>
+        <li><img src="img/stripeNew.webp" alt="" /></li>
+      </ul>
+    </footer>
+  </body>
+</html>
