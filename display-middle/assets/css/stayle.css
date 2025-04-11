@@ -1,0 +1,61 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  background: #000000;
+}
+
+.display-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* column-gap: 10px; */
+}
+
+.display-area > div {
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: saturation;
+  color: white;
+  border: 1px solid black;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.image-box-1 {
+  background-image: url("https://th.bing.com/th?id=OIP.99iB30OaymYQJZJbDhpYgwHaE7&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=2&pid=3.1&rm=2");
+  background-position: center;
+  background-size: cover;
+}
+
+.image-box-2 {
+  background-image: url("https://th.bing.com/th?id=OIP.dzcxhPFTpW6Q7tGYDVfgqgHaE8&w=305&h=204&c=8&rs=1&qlt=90&o=6&dpr=2&pid=3.1&rm=2");
+  background-position: center;
+  background-size: cover;
+}
+
+.image-box-3 {
+  background-image: url("https://th.bing.com/th?id=OIP.FB_zZf1kLuKf9_i2FUCESgHaLH&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=2&pid=3.1&rm=2");
+  background-position: center;
+  background-size: cover;
+}
+
+.image-box-4 {
+  background-image: url("https://th.bing.com/th?id=OIP.1-EZQ3Fc2-y07ZyljzT9oQHaE7&w=306&h=203&c=8&rs=1&qlt=90&o=6&dpr=2&pid=3.1&rm=2");
+  background-position: center;
+  background-size: cover;
+}
+
+.sample {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+}

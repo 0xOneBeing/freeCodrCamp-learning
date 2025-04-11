@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Example</title>
+  </head>
+  <body>
+    <h1 id="myHeading">Hello, World!</h1>
+    <button id="myButton">Click Me</button>
+
+    <script>
+      // Accessing and manipulating the DOM
+      const heading = document.getElementById("myHeading");
+      const button = document.getElementById("myButton");
+
+      button.addEventListener("click", () => {
+        heading.textContent = "Button Clicked!";
+        // heading.textContent.toggle("Button Clicked!", "Hello, World!");
+      });
+    </script>
+  </body>
+</html>

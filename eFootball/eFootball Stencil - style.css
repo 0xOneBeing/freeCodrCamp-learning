@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'eFootball';
+    src: local('eFootball Stencil Regular'), local('eFootball-Stencil-Regular'),
+        url('eFootballStencil-Regular.woff2') format('woff2'),
+        url('eFootballStencil-Regular.woff') format('woff'),
+        url('eFootballStencil-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
